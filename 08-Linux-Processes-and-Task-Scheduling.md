@@ -24,25 +24,25 @@ F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN    RSS PSR STIME TTY      
 0 R sean        6658    6657  0  80   0 - 14684 -       3932   0 08:33 pts/0    00:00:00 ps -eFl
 ```
 
-| Column | Description |
-|-------:|: -----------|
-|    F     |   Forest - Shows parent/child level in heirarchy |
-|    S     |   |
-|    UID   | Owner's User ID  |
-|    PID   | Process ID from  |
-|    PPID  |   |
-|    C     | CPU Utilisation  |
-|    PRI   |   Priority - Scale from 0-80 |
-|    NI    |   Niceness - -20 to 19|
-|    ADDR  |   |
-|    SZ    |   |
-|    WCHAN |   |
-|    RSS   |   |
-|    PSR   |   |
-|    STIME |   |
-|    TTY   | Controlling Terminal (? for daemon)  |
-|    TIME  | Execution time  |
-|    CMD   | Command name  |
+ Column | Description 
+-------:|: -----------
+    F     |   Forest - Shows parent/child level in heirarchy 
+    S     |   
+    UID   | Owner's User ID  
+    PID   | Process ID from  
+    PPID  |   
+    C     | CPU Utilisation  
+    PRI   |   Priority - Scale from 0-80 
+    NI    |   Niceness - -20 to 19
+    ADDR  |   
+    SZ    |   
+    WCHAN |   
+    RSS   |   
+    PSR   |   
+    STIME |   
+    TTY   | Controlling Terminal (? for daemon)  
+    TIME  | Execution time  
+    CMD   | Command name  
 
 Tree-like output
 ```
