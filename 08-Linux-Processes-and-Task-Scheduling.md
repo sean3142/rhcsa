@@ -1,4 +1,4 @@
-# Linux Proccescses and Task Scheduling
+# Linux Proccesses and Task Scheduling
 ## Processes and Priorties
 ### Process States
 
@@ -9,19 +9,20 @@
 5. Zombie - PID held until removed by parent process - no resources
 
 ### Moniroting with ps and top
-
->[sean@rhel-1 ~]ps -eFl`
->F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN    RSS PSR STIME TTY          TIME CMD
->4 S root           1       0  0  80   0 - 43767 -      13436   0 May09 ?        00:00:01 /usr/lib/systemd/systemd --switched-root --system --deserialize 18
->1 S root           2       0  0  80   0 -     0 -          0   0 May09 ?        00:00:00 [kthreadd]
->1 I root           3       2  0  60 -20 -     0 -          0   0 May09 ?        00:00:00 [rcu_gp]
->1 I root           4       2  0  60 -20 -     0 -          0   0 May09 ?        00:00:00 [rcu_par_gp]
->1 I root           9       2  0  60 -20 -     0 -          0   0 May09 ?        00:00:00 [mm_percpu_wq]
->5 I root        6633       2  0  80   0 -     0 -          0   0 08:24 ?        00:00:00 [kworker/0:2-events_power_efficient]
->0 S sean        6650    6567  0  80   0 - 11973 hrtime  9204   0 08:27 pts/0    00:00:00 vim 8-Linux-Processes-and-Task-Scheduling.md
->1 I root        6656       2  0  80   0 -     0 -          0   0 08:30 ?        00:00:00 [kworker/0:1-events_power_efficient]
->0 S sean        6657    6650  0  80   0 -  3181 -       2968   0 08:33 pts/0    00:00:00 /bin/bash -c ( ps -eFl) >/tmp/vwLOlE1/1 2>&1
->0 R sean        6658    6657  0  80   0 - 14684 -       3932   0 08:33 pts/0    00:00:00 ps -eFl
+```
+[sean@rhel-1 ~]ps -eFl
+F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN    RSS PSR STIME TTY          TIME CMD
+4 S root           1       0  0  80   0 - 43767 -      13436   0 May09 ?        00:00:01 /usr/lib/systemd/systemd --switched-root --system --deserialize 18
+1 S root           2       0  0  80   0 -     0 -          0   0 May09 ?        00:00:00 [kthreadd]
+1 I root           3       2  0  60 -20 -     0 -          0   0 May09 ?        00:00:00 [rcu_gp]
+1 I root           4       2  0  60 -20 -     0 -          0   0 May09 ?        00:00:00 [rcu_par_gp]
+1 I root           9       2  0  60 -20 -     0 -          0   0 May09 ?        00:00:00 [mm_percpu_wq]
+5 I root        6633       2  0  80   0 -     0 -          0   0 08:24 ?        00:00:00 [kworker/0:2-events_power_efficient]
+0 S sean        6650    6567  0  80   0 - 11973 hrtime  9204   0 08:27 pts/0    00:00:00 vim 8-Linux-Processes-and-Task-Scheduling.md
+1 I root        6656       2  0  80   0 -     0 -          0   0 08:30 ?        00:00:00 [kworker/0:1-events_power_efficient]
+0 S sean        6657    6650  0  80   0 -  3181 -       2968   0 08:33 pts/0    00:00:00 /bin/bash -c ( ps -eFl) >/tmp/vwLOlE1/1 2>&1
+0 R sean        6658    6657  0  80   0 - 14684 -       3932   0 08:33 pts/0    00:00:00 ps -eFl
+```
 
 | Column | Description |
 |-------:|: -----------|
@@ -43,9 +44,9 @@
 |    TIME  | Execution time  |
 |    CMD   | Command name  |
 
-```
+```Tree-like output
 [sean@rhel-1 ~]$ ps -x
-``` Tree-like output.
+``` 
 
 ```
 [sean@rhel-1 ~]$ top
@@ -82,7 +83,6 @@ Increase from Default
 ```
 
 ## Signals
-
 
 ```
 [sean@rhel-1 ~]$ sudo nice -n -2 vim
