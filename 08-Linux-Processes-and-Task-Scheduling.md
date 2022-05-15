@@ -44,10 +44,11 @@ F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN    RSS PSR STIME TTY      
 |    TIME  | Execution time  |
 |    CMD   | Command name  |
 
-```Tree-like output
+Tree-like output
+```
 [sean@rhel-1 ~]$ ps -x
 ``` 
-
+The `top` command provides and interactive live display of metrics.
 ```
 [sean@rhel-1 ~]$ top
 ``` Interactive output.
