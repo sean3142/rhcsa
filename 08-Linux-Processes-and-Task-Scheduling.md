@@ -27,19 +27,19 @@ F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN    RSS PSR STIME TTY      
  Column | Description 
 -------:|: -----------
     F     |   Forest - Shows parent/child level in heirarchy 
-    S     |   
+    S     |  n/a 
     UID   | Owner's User ID  
     PID   | Process ID from  
-    PPID  |   
+    PPID  |  n/a 
     C     | CPU Utilisation  
     PRI   |   Priority - Scale from 0-80 
     NI    |   Niceness - -20 to 19
-    ADDR  |   
-    SZ    |   
-    WCHAN |   
-    RSS   |   
-    PSR   |   
-    STIME |   
+    ADDR  |  n/a 
+    SZ    |  n/a 
+    WCHAN |  n/a 
+    RSS   |  n/a 
+    PSR   |  n/a 
+    STIME |  n/a 
     TTY   | Controlling Terminal (? for daemon)  
     TIME  | Execution time  
     CMD   | Command name  
