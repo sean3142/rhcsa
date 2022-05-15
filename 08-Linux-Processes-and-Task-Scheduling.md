@@ -51,8 +51,8 @@ Tree-like output
 The `top` command provides and interactive live display of metrics.
 ```
 [sean@rhel-1 ~]$ top
-``` Interactive output.
-
+``` 
+#### Other Commands
  * `pidof virt-manager`
  * `rgrep virt-manager`
  * `ps -U sean` PIDs started by me
