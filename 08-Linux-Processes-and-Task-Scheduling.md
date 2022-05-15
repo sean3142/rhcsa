@@ -25,7 +25,7 @@ F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN    RSS PSR STIME TTY      
 ```
 
  Column | Description 
--------:|: -----------
+ ---:| ---
     F     |   Forest - Shows parent/child level in heirarchy 
     S     |  n/a 
     UID   | Owner's User ID  
