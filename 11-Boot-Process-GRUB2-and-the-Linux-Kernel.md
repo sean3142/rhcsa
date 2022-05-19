@@ -73,6 +73,8 @@ Kernel files are stored in the `/boot` directory (filesystem) which is created d
 * _config_ - configuration
 * _System.map_ - Mapping
 
+Rock Linux Guide to [Compiling the Kernel](https://docs.rockylinux.org/guides/custom-linux-kernel/)
+
 ## /proc
 * Virtual
 * Stored in Memory
