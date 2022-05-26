@@ -22,27 +22,26 @@ A Module is a "set" of packages.  Sometimes packages in a module have inter-depe
 ### Module Stream
 Described as a *virtual repository*, this normally describes a major release and subsequent packages.  For example,
 
-> postgresql-9
-> postgresql-10
+> php-7.2
+> php-7.4
 
-We can use the `dnf module list` command to query the modules available for postgres.
-
+We can use the `dnf module list` command to query the modules available for php.
 ```
-[sean@rhel-1 ~]$ dnf module list postgresql
-AppStream
-Name       Stream Profiles           Summary                            
-postgresql 9.6    client, server [d] PostgreSQL server and client module
-postgresql 10 [d] client, server [d] PostgreSQL server and client module
-postgresql 12     client, server [d] PostgreSQL server and client module
-postgresql 13     client, server [d] PostgreSQL server and client module
-
+[sean@rhel-1 ~]$ dnf module list php
+Name Stream  Profiles                   Summary               
+php  7.2 [d] common [d], devel, minimal PHP scripting language
+php  7.3 [e] common [d], devel, minimal PHP scripting language
+php  7.4     common [d], devel, minimal PHP scripting language
+php  8.0     common [d], devel, minimal PHP scripting language
 Hint: [d]efault, [e]nabled, [x]disabled, [i]nstalled
 ```
-
-To use a module other than the default, one can simply specify the module/stream in the command.  Use the format <package>:<stream>/<profile>.  For example 
-
+Each of the above modules will have it's own minor releases.  Once enabled, a `dnf update` command will take minor releases from a module and apply them.
+Here is an exmaple where we switch out an already installed php:7.3 module with php7.4.
 ```
-[sean@rhel-1 ~]$ dnf module install postgresql:9.6/client
+[sean@rhel-1 ~]# dnf remove php
+[sean@rhel-1 ~]# dnf module reset php:7.3
+[sean@rhel-1 ~]# dnf module enable php:7.4
+[sean@rhel-1 ~]# dnf install php
 ```
 
 ### Module Profiles
@@ -83,3 +82,4 @@ jxtras              Rocky Linux 8 - Extras
 * `dnf list updates` - Show packages which can be updated
 * `dnf list <package>` - Show package availability
 * `dnf remove <package>` - Show package availability
+

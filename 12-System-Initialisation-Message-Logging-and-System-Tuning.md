@@ -51,6 +51,13 @@ Unit files are stored in the following directories
 | list-unit	| list units |
 | list-dependencies	| list dependencies |
 
+## Targets
+A target is equivalent to the __run-level__ in init.
+For example, the following command will cause the next reboot to stop at a shell and not load the GUI.
+```
+[sean@rhel-1 ~]# systemctl set-default multi-user.target
+```
+
 # Logs
 `rsyslogd`
 
@@ -102,4 +109,5 @@ RHEL has a systemd daemon _tuned.service_ which "tunes" the OS performance.
 * throughput-performance
 * virtual-guest
 * virtual-host
+
 
