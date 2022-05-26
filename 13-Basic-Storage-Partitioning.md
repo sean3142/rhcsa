@@ -4,15 +4,15 @@ You can edit both MBR (msdos) and GPT partitions with the `parted` command.
 
 | subcommand | Function | 
 | :--------: | -------- |
-| print	| displays partition table |
-| mklabel | Applies a label to the disk i.e. gpt or msdos | 
-| mkpart | Creates a new Partition |
-| name | Assigns name to partition |
-| rm | Removes the specified partition |
+| `print`	| displays partition table |
+| `mklabel` | Applies a label to the disk i.e. gpt or msdos | 
+| `mkpart` | Creates a new Partition |
+| `name` | Assigns name to partition |
+| `rm` | Removes the specified partition |
 
 ```
-[sean@rhel-1 rhcsa]$ sudo parted /dev/vda mklabel gpt
-[sean@rhel-1 rhcsa]$ sudo parted /dev/vda mkpart MyPartName 1 101M
+[sean@rhel-1 rhcsa]# parted /dev/vda mklabel gpt
+[sean@rhel-1 rhcsa]# parted /dev/vda mkpart MyPartName 1 101M
 ```
 
 Note that a gpt table must have a __name__ specified in mkpart.  Also, msdos partitions must have the __type__ specified as either __primary__, __logical__ or __extended.
