@@ -17,6 +17,7 @@ You can edit both MBR (msdos) and GPT partitions with the `parted` command.
 [sean@rhel-1 rhcsa]# parted /dev/vda mklabel msdos
 [sean@rhel-1 rhcsa]# parted /dev/vda mkpart primary 1 101M
 ```
+Tip: Use -1 for the end position to utilise the whole partition.  You will need to enter the parted shell or escape the '-' symbol.
 #### gpt Table
 The newer scheme, gpt doesn't need a _type_ specified.  However a name is mandatory and should be given in the 1st argument after the `mkpart` subcommand.
 ```
@@ -45,3 +46,4 @@ Kernel module to handle filesystems.  Offers three advantages.
 | `start` | start vdo volume |
 | `stop` | you can guess |
 
+##
