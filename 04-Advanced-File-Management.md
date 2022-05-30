@@ -34,12 +34,23 @@ u=rwx,g=rx,o=rx
 
 ### User Identifier (setuid) bit
 When set on a binary executable file, the file will be run with file owner's privileges regardless of who envoked the execution.
-
 ```
 [sean@rhel-1 ~]$ touch file3 
 [sean@rhel-1 ~]$ chmod u+s file3 	# Set setuid bit
-[sean@rhel-1 ~]$ chmod -4000 +s file3 	# Set setuid bit
+[sean@rhel-1 ~]$ ls -l file3
+-rwsrwxr-x. 1 sean sean 0 May 30 14:17 file3
+[sean@rhel-1 ~]$ chmod -4000 +s file3 	# reset setuid bit
 ```
+## Groud Identifier (setgit) bit
+Much like the setuid bit, an executable will be run and have _group_ level privileges during execution.
+```
+[sean@rhel-1 ~]$ chmod +2000  file3 	# Set setuid bit
+[sean@rhel-1 ~]$ ls -l file3
+-rwxrwsr-x. 1 sean sean 0 May 30 14:17 file3
+[sean@rhel-1 ~]$ chmod u-g file3 	# Reset setuid bit
+```
+
+However when set for a **directory**, files created within that directory will inherit owners group.
 
 ## The `find` Command
 ```
