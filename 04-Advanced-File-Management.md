@@ -52,15 +52,26 @@ Much like the setuid bit, an executable will be run and have _group_ level privi
 
 However when set for a **directory**, files created within that directory will inherit owners group.
 
-## The `find` Command
+## Searching Files
 ```
 [sean@rhel-1 ~]$ find . -name Letter.md
+[sean@rhel-1 ~]$ find . -iname letter.md	# Case Insensitive
+[sean@rhel-1 ~]$ find . -size -2M 		# Less than 2M size
+[sean@rhel-1 ~]$ find . -user sean 		# Owned by me
+[sean@rhel-1 ~]$ find . -maxdepth 2  		# All files 2 directory layers below .
+[sean@rhel-1 ~]$ find . -type d  		# All Directories (b for block, c for char, l for link)
+[sean@rhel-1 ~]$ find . -mtime +31  		# Modified __more than__ one month ago
+[sean@rhel-1 ~]$ find . -mmin -60  		# Modified __within__ previous hour
 ```
 
-#### Case Insensitive
+Execute commands on files found.  For example, delete all files less than 60-minutes old.
 ```
-[sean@rhel-1 ~]$ find . -iname letter.md
+[sean@rhel-1 ~]$ find . -mtime -60 -exec rm {} \;
+[sean@rhel-1 ~]$ find . -mtime -60 -ok rm {} \;
 ```
+* The `{}` denotes the argument position in the find file.  
+* `\;` is a delimited end-of-line.
+* The `-ok` flag is equivalent but with a confirmation at each line.
 
 #### Case Insensitive
 ```
