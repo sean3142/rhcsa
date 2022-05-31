@@ -25,6 +25,7 @@ IPV6_FAILURE_FATAL=no
 NAME=enp1s0
 UUID=0e3dbb8c-36bc-49da-b9ef-f9597898b4e9
 DEVICE=enp1s0
+```
 ONBOOT=no
 ```
 
@@ -52,4 +53,18 @@ ONBOOT=no
 | Sub-Command		| Description		|
 | `show`		| List connections	|
 | `up`/`down`		| Brings up/down interface	|
-| `add` 
+| `add` 		| 			|
+
+```
+
+[root@rhel-1 ~]# nmcli connnection show
+NAME    UUID                                  TYPE      DEVICE 
+enp1s0  0e3dbb8c-36bc-49da-b9ef-f9597898b4e9  ethernet  enp1s0 
+[root@rhel-1 ~]# nmcli con add		\
+			type ethernet	\
+			ifname enp0s8	\
+			con-name enp0s8	\
+			ip4 192.168.0.10/24 \
+			gw4 192.168.8.1
+```
+
